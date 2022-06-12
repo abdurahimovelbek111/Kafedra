@@ -63,9 +63,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206121748542_Initial.cs" />
-    <Compile Include="Migrations\202206121748542_Initial.designer.cs">
-      <DependentUpon>202206121748542_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202206121825145_Initial.cs" />
+    <Compile Include="Migrations\202206121825145_Initial.designer.cs">
+      <DependentUpon>202206121825145_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Chair.cs" />
@@ -78,8 +78,8 @@
     <Compile Include="Models\Subject_Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202206121748542_Initial.resx">
-      <DependentUpon>202206121748542_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206121825145_Initial.resx">
+      <DependentUpon>202206121825145_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

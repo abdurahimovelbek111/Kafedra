@@ -13,7 +13,7 @@ namespace Kafedra.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202206121748542_Initial"; }
+            get { return "202206121825145_Initial"; }
         }
         
         string IMigrationMetadata.Source

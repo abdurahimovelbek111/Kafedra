@@ -26,7 +26,7 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        name = c.String(),
+                        name = c.String(maxLength: 300),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -35,14 +35,14 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        first_name = c.String(),
-                        last_name = c.String(),
-                        middle_name = c.String(),
+                        first_name = c.String(maxLength: 30),
+                        last_name = c.String(maxLength: 50),
+                        middle_name = c.String(maxLength: 50),
                         gender = c.Boolean(nullable: false),
                         birthday = c.DateTime(nullable: false),
-                        address = c.String(),
-                        phone = c.String(),
-                        degree = c.String(),
+                        address = c.String(maxLength: 500),
+                        phone = c.String(maxLength: 13),
+                        degree = c.String(maxLength: 30),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -65,10 +65,10 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        name = c.String(),
-                        code = c.String(),
-                        language = c.String(),
-                        type = c.String(),
+                        name = c.String(maxLength: 300),
+                        code = c.String(maxLength: 200),
+                        language = c.String(maxLength: 50),
+                        type = c.String(maxLength: 500),
                         course = c.Int(nullable: false),
                         semistir = c.Int(nullable: false),
                         chair_id_id = c.Int(),
@@ -85,7 +85,7 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        name = c.String(),
+                        name = c.String(maxLength: 200),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -94,7 +94,7 @@
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        name = c.String(),
+                        name = c.String(maxLength: 200),
                         all_hour = c.Int(nullable: false),
                         lecture = c.Int(nullable: false),
                         practice = c.Int(nullable: false),
