@@ -18,6 +18,7 @@ namespace Kafedra.Models
         public int mustaqil_hour { get; set; }
         public int labor_mash { get; set; }
         public int seminar { get; set; }
-        public int course_work { get; set; }
+        public int course_work { get; set; } 
+
     }
 }
