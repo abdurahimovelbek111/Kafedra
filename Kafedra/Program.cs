@@ -17,7 +17,7 @@ namespace Kafedra
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmployeeDB());
+            Application.Run(new Form1());
         }
     }
 }

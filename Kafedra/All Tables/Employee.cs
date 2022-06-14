@@ -54,21 +54,21 @@ namespace Kafedra.All_Tables
 
                 if (radioButton1.Checked.ToString() == "True")
                 {
-                        employee.first_name = DirName.Text;
-                        employee.last_name = textBox1.Text;
-                        employee.middle_name = textBox2.Text;
+                    employee.first_name = DirName.Text;
+                    employee.last_name = textBox1.Text;
+                    employee.middle_name = textBox2.Text;
 
-                        employee.gender = radioButton1.Checked;
-                        employee.birthday = DateTime.Parse(dateTimePicker1.Text);
-                        employee.address = richTextBox1.Text;
-                        employee.phone = textBox3.Text;
-                        employee.degree = richTextBox2.Text;
-                        db.Employees.Add(employee);
-                        db.SaveChanges();
-                        MessageBox.Show("Ma'lumot qushildi!!!!!!");
-                        Read();
-                        textBox1.Text = "";
-                    
+                    employee.gender = radioButton1.Checked;
+                    employee.birthday = DateTime.Parse(dateTimePicker1.Text);
+                    employee.address = richTextBox1.Text;
+                    employee.phone = textBox3.Text;
+                    employee.degree = richTextBox2.Text;
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+                    MessageBox.Show("Ma'lumot qushildi!!!!!!");
+                    Read();
+                    textBox1.Text = "";
+
                 }
                 if (radioButton2.Checked.ToString() == "True")
                 {
@@ -92,5 +92,54 @@ namespace Kafedra.All_Tables
                 MessageBox.Show("Iltimos qaytadan ko'rib chiqing ma'lumot to'liqligiga!!!!!!");
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            switch (comboBox2.Text)
+            {
+                case "First Name": dataGridView1.DataSource = db.Employees.Where(x => x.first_name.Contains(textBox4.Text)).ToList(); break;
+                case "Last Name": dataGridView1.DataSource = db.Employees.Where(x => x.last_name.Contains(textBox4.Text)).ToList(); break;
+                case "Middil Name": dataGridView1.DataSource = db.Employees.Where(x => x.middle_name.Contains(textBox4.Text)).ToList(); break;
+                // case "Gender": dataGridView1.DataSource = db.Employees.Where(x => x.gender.Equals(textBox4.Text)).ToList();  break;
+                // case "Birthday": dataGridView1.DataSource = db.Employees.Where(x => x.birthday.Equals(DateTime.Parse(textBox4.Text))).ToList(); break;
+                case "Location": dataGridView1.DataSource = db.Employees.Where(x => x.address.Contains(textBox4.Text)).ToList(); break;
+                case "Phone": dataGridView1.DataSource = db.Employees.Where(x => x.phone.Contains(textBox4.Text)).ToList(); break;
+                case "Degree": dataGridView1.DataSource = db.Employees.Where(x => x.degree.Contains(textBox4.Text)).ToList(); break;
+                default:
+                    break;
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            Read();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex < -1)
+                return;
+            if (dataGridView1.CurrentRow.Index != -1)
+            {
+                employee.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id"].Value);
+                employee = db.Employees.Where(x => x.id == employee.id).FirstOrDefault();
+                DirName.Text = employee.first_name;
+                textBox1.Text = employee.last_name;
+                textBox2.Text = employee.middle_name;
+                switch(employee.gender)
+                {
+                    case true:                     
+                            radioButton1.Checked = employee.gender;break;
+                    case false:
+                        radioButton2.Checked = employee.gender; break;
+                }
+                dateTimePicker1.Checked =bool.Parse(employee.birthday.ToString());
+                richTextBox1.Text = employee.address;
+                textBox3.Text = employee.phone;
+                richTextBox2.Text = employee.degree;
+            }
+        }
     }
 }
+

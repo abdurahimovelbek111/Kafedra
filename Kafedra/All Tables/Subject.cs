@@ -16,5 +16,15 @@ namespace Kafedra.All_Tables
         {
             InitializeComponent();
         }
+
+        private void domainUpDown6_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Subject_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

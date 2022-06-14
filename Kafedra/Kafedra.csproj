@@ -126,6 +126,9 @@
     <EmbeddedResource Include="All Tables\Shape.resx">
       <DependentUpon>Shape.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="All Tables\Subject.resx">
+      <DependentUpon>Subject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

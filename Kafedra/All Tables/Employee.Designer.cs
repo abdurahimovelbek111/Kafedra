@@ -124,6 +124,7 @@
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textBox4
             // 
@@ -131,10 +132,20 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(226, 33);
             this.textBox4.TabIndex = 16;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "First Name",
+            "Last Name",
+            "Middil Name",
+            "Gender",
+            "Birthday",
+            "Location",
+            "Phone",
+            "Degree"});
             this.comboBox2.Location = new System.Drawing.Point(410, 44);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 34);
@@ -373,6 +384,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(943, 523);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // EmployeeDB
             // 

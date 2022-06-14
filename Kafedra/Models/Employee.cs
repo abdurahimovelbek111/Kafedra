@@ -26,6 +26,7 @@ namespace Kafedra.Models
         public string phone { get; set; }       
         [StringLength(30)]
         public string degree { get; set; }
+     
 
     }
 }
