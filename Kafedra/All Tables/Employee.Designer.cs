@@ -187,6 +187,7 @@
             this.btnEdit.TabIndex = 12;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // panel2
             // 
@@ -216,7 +217,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(139, 410);
+            this.richTextBox2.Location = new System.Drawing.Point(144, 395);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(220, 101);
             this.richTextBox2.TabIndex = 38;
@@ -226,7 +227,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(63, 410);
+            this.label8.Location = new System.Drawing.Point(68, 395);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 21);
             this.label8.TabIndex = 37;
@@ -235,7 +236,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(139, 367);
+            this.textBox3.Location = new System.Drawing.Point(144, 352);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(220, 28);
             this.textBox3.TabIndex = 36;
@@ -245,7 +246,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(66, 370);
+            this.label7.Location = new System.Drawing.Point(71, 355);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 21);
             this.label7.TabIndex = 35;
@@ -253,7 +254,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(139, 251);
+            this.richTextBox1.Location = new System.Drawing.Point(144, 236);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(220, 101);
             this.richTextBox1.TabIndex = 34;
@@ -264,7 +265,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 251);
+            this.label6.Location = new System.Drawing.Point(48, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 21);
             this.label6.TabIndex = 33;
@@ -274,11 +275,10 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(276, 176);
+            this.radioButton2.Location = new System.Drawing.Point(281, 161);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(64, 24);
             this.radioButton2.TabIndex = 32;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Ayol";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -286,7 +286,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(160, 176);
+            this.radioButton1.Location = new System.Drawing.Point(165, 161);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(80, 24);
             this.radioButton1.TabIndex = 31;
@@ -297,7 +297,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(139, 134);
+            this.textBox2.Location = new System.Drawing.Point(144, 119);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(222, 28);
             this.textBox2.TabIndex = 28;
@@ -305,7 +305,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Elephant", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 208);
+            this.dateTimePicker1.Location = new System.Drawing.Point(146, 193);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(220, 21);
             this.dateTimePicker1.TabIndex = 30;
@@ -314,7 +314,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 54);
+            this.label1.Location = new System.Drawing.Point(28, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 21);
             this.label1.TabIndex = 15;
@@ -324,7 +324,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(47, 211);
+            this.label5.Location = new System.Drawing.Point(52, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 20;
@@ -333,7 +333,7 @@
             // DirName
             // 
             this.DirName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DirName.Location = new System.Drawing.Point(139, 51);
+            this.DirName.Location = new System.Drawing.Point(144, 36);
             this.DirName.Name = "DirName";
             this.DirName.Size = new System.Drawing.Size(222, 28);
             this.DirName.TabIndex = 16;
@@ -342,7 +342,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 95);
+            this.label2.Location = new System.Drawing.Point(33, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 21);
             this.label2.TabIndex = 17;
@@ -351,7 +351,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 95);
+            this.textBox1.Location = new System.Drawing.Point(144, 80);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 28);
             this.textBox1.TabIndex = 18;
@@ -360,7 +360,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 141);
+            this.label3.Location = new System.Drawing.Point(15, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 21);
             this.label3.TabIndex = 19;
@@ -370,7 +370,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 179);
+            this.label4.Location = new System.Drawing.Point(62, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 21);
             this.label4.TabIndex = 21;
@@ -384,6 +384,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(943, 523);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // EmployeeDB

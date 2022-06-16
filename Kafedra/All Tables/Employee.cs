@@ -2,6 +2,7 @@
 using Kafedra.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace Kafedra.All_Tables
     {
         ApplicationDb db = new ApplicationDb();
         Employee employee = new Employee();
-
+       
         public EmployeeDB()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace Kafedra.All_Tables
         private void Employee_Load(object sender, EventArgs e)
         {
             Read();
-
+           
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -51,14 +52,21 @@ namespace Kafedra.All_Tables
             if (DirName.Text.Length != 0 && textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && radioButton1.Text.Length != 0 && richTextBox1.Text.Length != 0 && textBox3.Text.Length != 0 && richTextBox2.Text.Length != 0 && dateTimePicker1.Text.Length != 0
                  || DirName.Text.Length != 0 && textBox1.Text.Length != 0 && textBox2.Text.Length != 0 && radioButton1.Text.Length != 0 && richTextBox1.Text.Length != 0 && textBox3.Text.Length != 0 && richTextBox2.Text.Length != 0 && dateTimePicker1.Text.Length != 0)
             {
-
-                if (radioButton1.Checked.ToString() == "True")
+                string g;
+                if (radioButton1.Checked == true)
                 {
-                    employee.first_name = DirName.Text;
+                    g = "True";
+                }
+                else
+                {
+                    g = "False";
+                }
+
+                employee.first_name = DirName.Text;
                     employee.last_name = textBox1.Text;
                     employee.middle_name = textBox2.Text;
 
-                    employee.gender = radioButton1.Checked;
+                    employee.gender = bool.Parse(g);
                     employee.birthday = DateTime.Parse(dateTimePicker1.Text);
                     employee.address = richTextBox1.Text;
                     employee.phone = textBox3.Text;
@@ -69,23 +77,8 @@ namespace Kafedra.All_Tables
                     Read();
                     textBox1.Text = "";
 
-                }
-                if (radioButton2.Checked.ToString() == "True")
-                {
-                    employee.first_name = DirName.Text;
-                    employee.last_name = textBox1.Text;
-                    employee.middle_name = textBox2.Text;
-                    employee.gender = radioButton2.Checked;
-                    employee.birthday = DateTime.Parse(dateTimePicker1.Text);
-                    employee.address = richTextBox1.Text;
-                    employee.phone = textBox3.Text;
-                    employee.degree = richTextBox2.Text;
-                    db.Employees.Add(employee);
-                    db.SaveChanges();
-                    MessageBox.Show("Ma'lumot qushildi!!!!!!");
-                    Read();
-                    textBox1.Text = "";
-                }
+                
+               
             }
             else
             {
@@ -127,18 +120,44 @@ namespace Kafedra.All_Tables
                 DirName.Text = employee.first_name;
                 textBox1.Text = employee.last_name;
                 textBox2.Text = employee.middle_name;
-                switch(employee.gender)
+                if(bool.Parse(db.Employees.Where(x => x.middle_name.Contains("o'g'li")).ToString()) ==true)
                 {
-                    case true:                     
-                            radioButton1.Checked = employee.gender;break;
-                    case false:
-                        radioButton2.Checked = employee.gender; break;
+                    radioButton1.Checked = true;
                 }
-                dateTimePicker1.Checked =bool.Parse(employee.birthday.ToString());
+                if (bool.Parse(db.Employees.Where(x => x.middle_name.Contains("qizi")).ToString()) == true)
+                {
+                    radioButton2.Checked = false;
+                }
+                dateTimePicker1.Text =employee.birthday.ToString();
                 richTextBox1.Text = employee.address;
                 textBox3.Text = employee.phone;
                 richTextBox2.Text = employee.degree;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            employee.first_name = DirName.Text.Trim();
+            employee.last_name = textBox1.Text.Trim();
+            employee.middle_name = textBox2.Text.Trim();
+
+            //employee.gender =bool.Parse(radioButton1.Text.ToString().Trim());
+            employee.birthday = DateTime.Parse(dateTimePicker1.Text.Trim());
+            employee.address = richTextBox1.Text.Trim();
+            employee.phone = textBox3.Text.Trim();
+            employee.degree = richTextBox2.Text.Trim();
+            if (employee.id == 0)
+                db.Employees.Add(employee);
+            else
+                db.Entry(employee).State = EntityState.Modified;
+            db.SaveChanges();
+            MessageBox.Show("Malimot yangilandii");
+            Read();
         }
     }
 }

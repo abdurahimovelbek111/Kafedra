@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,7 +43,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightGreen;
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -59,14 +57,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chair";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(123, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(207, 28);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnAdd
             // 
@@ -94,6 +84,7 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 70);
             this.dataGridView1.Name = "dataGridView1";
@@ -169,6 +160,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

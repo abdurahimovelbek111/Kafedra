@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Kafedra.Models
 {
     public class Subject
-    {
+    {       
         public int id { get; set; }        
         [StringLength(200)]
         public string name { get; set; }
@@ -19,6 +19,7 @@ namespace Kafedra.Models
         public int labor_mash { get; set; }
         public int seminar { get; set; }
         public int course_work { get; set; } 
-
+        public virtual ICollection<Direction> Directions { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

@@ -9,6 +9,8 @@ namespace Kafedra.Models
 {
     public class Employee
     {
+
+       
         public int id { get; set; }        
         [StringLength(30)]
         public string first_name { get; set; }
@@ -26,7 +28,8 @@ namespace Kafedra.Models
         public string phone { get; set; }       
         [StringLength(30)]
         public string degree { get; set; }
-     
+        public virtual ICollection<Chair> Chairs { get; set; }
+        public virtual ICollection<Subject> Subjects { get; set; }
 
     }
 }

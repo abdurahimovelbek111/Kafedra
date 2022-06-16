@@ -9,6 +9,7 @@ namespace Kafedra.Models
 {
     public class Direction
     {
+       
         public int id { get; set; }
        
         [StringLength(300)]
@@ -24,8 +25,9 @@ namespace Kafedra.Models
         public string type { get; set; }
 
         public int course { get; set; }
-        public int semistir { get; set; }
-        Shape shape_id { get; set; }
-        Chair chair_id { get; set; }
+        public int semistir { get; set; }       
+        public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<Shape> Shapes { get; set; }
+        public virtual ICollection<Chair> Chairs { get; set; }
     }
 }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kafedra.All_Tables
+namespace Kafedra
 {
-    public partial class Shape : Form
+    public partial class Form3 : Form
     {
-        public Shape()
+        public Form3()
         {
             InitializeComponent();
-        }
-
-        private void Shape_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

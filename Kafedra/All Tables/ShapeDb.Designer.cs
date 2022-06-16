@@ -1,6 +1,6 @@
 ﻿namespace Kafedra.All_Tables
 {
-    partial class Shape
+    partial class ShapeDb
     {
         /// <summary>
         /// Required designer variable.
@@ -76,6 +76,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -134,7 +135,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // Shape
+            // ShapeDb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +143,7 @@
             this.ClientSize = new System.Drawing.Size(710, 502);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Shape";
+            this.Name = "ShapeDb";
             this.Text = "Shape";
             this.Load += new System.EventHandler(this.Shape_Load);
             this.groupBox1.ResumeLayout(false);
